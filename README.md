@@ -73,6 +73,11 @@ if (isFull == LOW) {
 
 ---
 
+## Diagram
+
+<img width="539" height="495" alt="image" src="https://github.com/user-attachments/assets/11814190-4c68-4f8e-b781-18cd74baa2ee" />
+
+---
 ## Setup Instructions
 
 1. Connect all components as per the pin configuration.
