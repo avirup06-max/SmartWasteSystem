@@ -46,11 +46,13 @@ Make sure the following libraries are installed in your Arduino IDE or added in 
 - ESP32Servo  
 - Wire  
 
-##Logic Overview
+---
 
-cpp
-Copy
-Edit
+## Logic Overview
+
+The system logic can be summarized as:
+
+```cpp
 if (distance <= 30) {
   lidServo.write(90); // Open lid
   digitalWrite(GREEN_LED, HIGH);
@@ -63,42 +65,39 @@ if (isFull == LOW) {
   display.println("Status: FULL");
   digitalWrite(BUZZER, HIGH);
 }
-If an object (e.g., a user) is detected within 30 cm, the lid opens and the green LED turns on.
+```
 
-If no object is nearby, the lid stays closed and the red LED is turned on.
+* If an object (e.g., a user) is detected within 30 cm, the lid opens and the green LED turns on.
+* If no object is nearby, the lid stays closed and the red LED is turned on.
+* If the IR sensor detects the bin is full (active LOW), the buzzer is activated and the OLED shows "Status: FULL".
 
-If the IR sensor detects the bin is full (active LOW), the buzzer is activated and the OLED shows "Status: FULL".
+---
 
-##Diagram
+## Setup Instructions
 
-<img width="539" height="495" alt="image" src="https://github.com/user-attachments/assets/d71c1d8a-f375-41f2-9e2b-0f8ded3a31bc" />
+1. Connect all components as per the pin configuration.
+2. Upload the code to your ESP32 board using the Arduino IDE.
+3. Power the ESP32 using USB or a suitable power supply.
+4. Observe the OLED screen and system behavior.
 
+---
 
-##Setup Instructions
-Connect all components as per the pin configuration.
+## Example OLED Output
 
-Upload the code to your ESP32 board using the Arduino IDE.
-
-Power the ESP32 using USB or a suitable power supply.
-
-Observe the OLED screen and system behavior.
-
-##Example OLED Output
-makefile
-Copy
-Edit
+```
 Status: Ready
 Distance: 25 cm
+```
+
 If the bin is full:
 
-makefile
-Copy
-Edit
+```
 Status: FULL
 Distance: 28 cm
+```
 
-Author
-Avirup Bhunia
+---
 
+## Author
 
-
+**Avirup Bhunia**
